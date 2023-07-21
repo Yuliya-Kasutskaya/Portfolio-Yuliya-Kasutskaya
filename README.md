@@ -9,26 +9,23 @@ Aktywnie poszukuję możliwości zdobycia praktycznego doświadczenia zawodowego
 
 # Narzędzia
 - JIRA
-- MySQL Workbench
-- SoapUI
+- MySQL
 - Postman
-- VisualCode
+- IntelliJ IDEA
 - Git
+- TestRail
 
 # Umiętności
-- ISTQB knowledge
-- Software testing
+- Sylabus ISTQB
 - DevTools
-- Creating Test Cases
-- Reporting bugs
-- API basics
-- Exploratory tests
+- Tworzenie Przypadków testowych
+- Raportowanie błędów
+- Podstawy testowania API
+- Testowanie exploracyjne
 
 # Przykłady przypadków testowych
 
-
 # Przykłady raportów błędów
-
 
 # Przykłady zapytań do bazy danych(mySQL)
 
