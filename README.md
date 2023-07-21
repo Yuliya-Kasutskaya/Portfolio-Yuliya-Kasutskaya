@@ -24,9 +24,6 @@ Aktywnie poszukuję możliwości zdobycia praktycznego doświadczenia zawodowego
 - API basics
 - Exploratory tests
 
-# Przykłady test planów
-
-
 # Przykłady przypadków testowych
 
 
