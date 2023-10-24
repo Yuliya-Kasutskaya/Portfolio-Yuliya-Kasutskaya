@@ -1,46 +1,65 @@
-#1. Imię i nazwisko (tylko te dwie dane) klienta numer 4.
+#1. Select the name and last name of the client with id 4.
 
-SELECT imie, nazwisko FROM klienci WHERE idklienta=4
+SELECT imie, nazwisko 
+FROM klienci 
+WHERE idklienta=4
 
-#2. Wszystkie dane samochodów z rocznika 2010.
+#2. Select all data about cars from the 2010 year.
 
-SELECT * FROM auta WHERE rocznik=2010
+SELECT * 
+FROM auta 
+WHERE rocznik=2010
 
-#3. Wszystkie dane na temat samochodów marki Ford posiadanych przez nas.
+#3. Select all data about Ford cars.
 
-SELECT * FROM auta WHERE marka="Ford"
+SELECT * 
+FROM auta 
+WHERE marka="Ford"
 
-#4. Samochody o numerach w bazie od 2 do 4 włącznie.
+#4. Select all cars with id numbers including from 2 to 4.
 
-SELECT * FROM auta ORDER BY idauta ASC limit 3 OFFSET 1
+SELECT * 
+FROM auta 
+ORDER BY idauta ASC 
+LIMIT 3 OFFSET 1
 
-#5. Imiona i nazwiska klientów, którzy mieszkają w Katowicach na ulicy Rolnej (pod
-dowolnym numerem).
+#5. Select names and last names of clients living in Katowice city on Rolna street.
 
-SELECT imie, nazwisko FROM klienci WHERE adres LIKE "%Rolna%"
+SELECT imie, nazwisko 
+FROM klienci 
+WHERE adres 
+LIKE "%Rolna%"
 
-#6. Samochód w bazie (marka, model), którego ubezpieczenie jest najdroższe z
-wszystkich aut.
+#6. Select a car that has the most expensive insurance.
 
-SELECT marka, model, ubezpieczenie FROM auta ORDER BY ubezpieczenie DESC LIMIT 1
+SELECT marka, model, ubezpieczenie 
+FROM auta 
+ORDER BY ubezpieczenie DESC 
+LIMIT 1
 
-#7. Samochód (idauta, marka, model), który został najwcześniej wypożyczony
-(decyduje datawyp).
+#7. Select a car (idauta, marka, model) that was borrowed the earliest.
 
-SELECT auta.idauta, auta.marka, auta.model, wypozyczenia.datawyp FROM auta, wypozyczenia WHERE auta.idauta=wypozyczenia.idauta ORDER BY wypozyczenia.datawyp ASC LIMIT 1
+SELECT auta.idauta, auta.marka, auta.model, wypozyczenia.datawyp 
+FROM auta, wypozyczenia 
+WHERE auta.idauta=wypozyczenia.idauta 
+ORDER BY wypozyczenia.datawyp ASC 
+LIMIT 1
 
-#8. Imiona i nazwiska osób, które wypożyczyły kiedykolwiek samochód nr 1.
+#8. Select names and last names of clients who have ever rented a car number 1.
 
-SELECT klienci.imie, klienci.nazwisko FROM klienci, wypozyczenia WHERE idauta=1 AND klienci.idklienta=wypozyczenia.idklienta
+SELECT klienci.imie, klienci.nazwisko 
+FROM klienci, wypozyczenia 
+WHERE idauta=1 AND klienci.idklienta=wypozyczenia.idklienta
 
-#9. Jakie auta (marka, model) kiedykolwiek wypożyczyła u nas osoba nr 4?
+#9. Select cars (marka, model) that were ever borrowed by the client with id 4.
 
-SELECT auta.marka, auta.model FROM auta, wypozyczenia WHERE idklienta=4 AND auta.idauta=wypozyczenia.idauta
+SELECT auta.marka, auta.model 
+FROM auta, wypozyczenia 
+WHERE idklienta=4 AND auta.idauta=wypozyczenia.idauta
 
-#10. Jakie auta (marka, model) kiedykolwiek wypożyczyła u nas osoba o nazwisku
-"Pastewniak"?
+#10. Select cars (marka, model) that were ever borrowed by the client with the last name "Pastewniak".
 
-SELECT auta.marka, auta.model FROM auta, wypozyczenia, klienci WHERE nazwisko="Pastewniak" AND auta.idauta=wypozyczenia.idauta AND klienci.idklienta=wypozyczenia.idklienta
-
-
+SELECT auta.marka, auta.model 
+FROM auta, wypozyczenia, klienci 
+WHERE nazwisko="Pastewniak" AND auta.idauta=wypozyczenia.idauta AND klienci.idklienta=wypozyczenia.idklienta
 
