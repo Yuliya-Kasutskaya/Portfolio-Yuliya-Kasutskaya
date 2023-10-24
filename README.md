@@ -1,33 +1,33 @@
 # Portfolio
 
 
-# O mnie
+# About me
 Jestem głęboko zainteresowanа testowaniem oprogramowania i stale uczę się poprzez samokształcenie.
 Posiadam umiejętności w zakresie raportowania błędów, pisania przypadków testowych i testowania API. Zdobyłam doświadczenie w skutecznej komunikacji w zespole, koordynowaniu zadań i tworzeniu raportów w mojej poprzedniej pracy. 
 Aktywnie poszukuję możliwości zdobycia praktycznego doświadczenia zawodowego w IT projekcie.
 
 
-# Narzędzia
+# Tools
 - JIRA
-- MySQL
+- PostgreSQL
 - Postman
 - IntelliJ IDEA
-- Git
+- Git, GitHub
 - TestRail
 
-# Umiętności
-- Sylabus ISTQB
+# Skills
+- Syllabus ISTQB
 - DevTools
-- Tworzenie Przypadków testowych
-- Raportowanie błędów
-- Podstawy testowania API
-- Testowanie exploracyjne
+- Creating test cases
+- Bug reporting
+- API testing basics
+- Exploratory testing
 
-# Przykłady przypadków testowych
+# Test case examples
 
-# Przykłady raportów błędów
+# Bug report examples
 
-# Przykłady zapytań do bazy danych(mySQL)
+# SQL requests examples
 [Zapytania do baz danych](https://github.com/Yuliya-Kasutskaya/Portfolio-Yuliya-Kasutskaya/tree/main/sql_requests)
 
   
