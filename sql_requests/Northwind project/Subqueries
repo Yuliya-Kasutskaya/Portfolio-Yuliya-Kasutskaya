@@ -1,0 +1,38 @@
+#1. Display products whose quantity on sale is less than the smallest average quantity of products in order details (grouping by product_id). 
+The resulting table must have product_name and units_in_stock columns.
+
+SELECT product_name, units_in_stock
+FROM products
+WHERE units_in_stock < ANY 
+			(SELECT AVG (quantity)
+			FROM order_details
+			GROUP BY product_id
+			ORDER BY AVG (quantity)
+			LIMIT 1)
+ORDER BY units_in_stock DESC
+
+#2. Write a query that displays 3 orders with the highest cost, which were created after September 1, 1997, inclusive.
+The total cost is calculated as the sum of the cost of the order parts, taking into account the discount.
+The resulting table must have customer_id columns, ship_country and order_price, whose rows should be sorted by order value in reverse order.
+
+SELECT orders.customer_id, orders.ship_country, order_price
+FROM orders
+INNER JOIN 
+	(SELECT SUM (unit_price * quantity - (unit_price * quantity * discount)) AS order_price, order_id
+	FROM order_details
+	GROUP BY order_id
+	ORDER BY order_price DESC
+	) AS od
+USING (order_id)
+WHERE order_date >= '1997.09.01'  
+ORDER BY order_price DESC
+LIMIT 3
+
+
+#3. Display all products (unique product names), of which exactly 10 units are ordered.
+
+SELECT DISTINCT products.product_name, order_details.quantity
+FROM order_details
+JOIN products
+USING (product_id)
+WHERE order_details.quantity = '10'
