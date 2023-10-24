@@ -28,6 +28,7 @@ Aktywnie poszukuję możliwości zdobycia praktycznego doświadczenia zawodowego
 # Przykłady raportów błędów
 
 # Przykłady zapytań do bazy danych(mySQL)
+[Zapytania do baz danych](https://github.com/Yuliya-Kasutskaya/Portfolio-Yuliya-Kasutskaya/tree/main/sql_requests)
 
   
 
