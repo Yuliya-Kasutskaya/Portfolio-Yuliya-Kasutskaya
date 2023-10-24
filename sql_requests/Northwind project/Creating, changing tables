@@ -1,8 +1,8 @@
-1. Создать таблицу exam с полями:
+1. Create exam table with fields:
 
-- идентификатора экзамена - автоинкрементируемый, уникальный, запрещает NULL;
-- наименования экзамена
-- даты экзамена
+- exam identifier - auto-incrementing, unique, prohibits NULL;
+- name of the exam
+- exam dates
 
 CREATE TABLE exam
 (
