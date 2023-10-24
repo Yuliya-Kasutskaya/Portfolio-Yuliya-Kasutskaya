@@ -1,4 +1,5 @@
---1
+#1. Find customers and employees serving their orders the same as customers and employees from the city of London, and the delivery company is Speedy Express.
+Display the customer's company and employee's full name.
 
 SELECT CONCAT(last_name, ' ', first_name), customers.company_name
 FROM orders
@@ -8,7 +9,9 @@ INNER JOIN shippers on shippers.shipper_id = orders.ship_via
 WHERE employees.city = 'London' AND customers.city = 'London' AND shippers.company_name = 'Speedy Express'
 
 
---2
+#2. Find active (see the discontinued field) products from the Beverages and Seafood categories, of which there are less than 20 units on sale.
+Display the name of the products, the number of units on sale, the name of the supplier's contact, and his phone number.
+  
 SELECT products.product_name, products.units_in_stock, suppliers.contact_name, suppliers.phone
 FROM products
 INNER JOIN categories USING (category_id)
@@ -16,7 +19,7 @@ INNER JOIN suppliers USING (supplier_id)
 WHERE category_name IN('Beverages', 'Seafood') AND products.units_in_stock < 20 AND discontinued = 0
 ORDER BY units_in_stock
 
---3
+#3. Find customers who have not made a single order. Display customer name and order_id.
 
 SELECT customers.contact_name, orders.order_id
 FROM customers
@@ -24,7 +27,8 @@ LEFT JOIN orders ON orders.customer_id = customers.customer_id
 WHERE order_id IS NULL
 
 
---4
+#4. Rewrite the previous query using a symmetrical type of join.
+  
 SELECT customers.contact_name, orders.order_id
 FROM orders
 RIGHT JOIN customers ON orders.customer_id = customers.customer_id
