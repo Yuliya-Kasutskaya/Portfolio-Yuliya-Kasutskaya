@@ -1,54 +1,39 @@
-1# Выбрать все записи заказов в которых наименование страны отгрузки начинается с 'U'
+#1. Select all order records in which the shipping country name begins with 'U'.
+  
 SELECT *
 FROM orders
 WHERE ship_country LIKE 'U%'
+
+#2. Select order records (include order ID, customer ID, weight, and shipping country columns) that should be shipped to countries whose name begins with 'N', 
+sort by weight (descending) and display only the first 10 records.
   
-2. Выбрать записи заказов (включить колонки идентификатора заказа, идентификатора заказчика, веса и страны отгузки), которые должны быть отгружены в страны имя которых начинается с 'N', отсортировать по весу (по убыванию) и вывести только первые 10 записей.
-
-3. Выбрать записи работников (включить колонки имени, фамилии, телефона, региона) в которых регион неизвестен
-
-4. Подсчитать кол-во заказчиков регион которых известен
-
-5. Подсчитать кол-во поставщиков в каждой из стран и отсортировать результаты группировки по убыванию кол-ва
-
-6. Подсчитать суммарный вес заказов (в которых известен регион) по странам, затем отфильтровать по суммарному весу (вывести только те записи где суммарный вес больше 2750) и отсортировать по убыванию суммарного веса.
-
-7. Выбрать все уникальные страны заказчиков и поставщиков и отсортировать страны по возрастанию
-
-8. Выбрать такие страны в которых "зарегистированы" одновременно и заказчики и поставщики и работники.
-
-9. Выбрать такие страны в которых "зарегистированы" одновременно заказчики и поставщики, но при этом в них не "зарегистрированы" работники.
-
-
-
-
 SELECT order_id, customer_id, freight, ship_country
 FROM orders
 WHERE ship_country LIKE 'N%'
 ORDER BY freight DESC
 LIMIT 10
 
-
+#3. Select employee records (include columns first name, last name, telephone, region) in which the region is unknown.
+  
 SELECT last_name, first_name, home_phone, region
 FROM employees
 WHERE region IS NULL
 
+#4. Count the number of customers whose region is known.
+  
 SELECT COUNT(first_name)
 FROM employees
 WHERE region IS NULL
 
-
-SELECT *
-FROM orders
-
---5
+#5. Count the number of suppliers in each country and sort the grouping results in descending order of number.
 
 SELECT country, COUNT(country)
 FROM suppliers
 GROUP BY country
 ORDER BY count DESC
 
---6
+#6. Calculate the total weight of orders (in which the region is known) by country, then filter by total weight
+(display only those records where the total weight is more than 2750) and sort in descending order of the total weight.
 
 SELECT ship_country, SUM(freight) 
 FROM orders
@@ -57,8 +42,8 @@ GROUP BY ship_country
 HAVING SUM(freight) > 2750
 ORDER BY sum DESC
 
+#7. Select all unique countries of customers and suppliers and sort countries in ascending order.
 
---7
 SELECT ship_country
 FROM orders
 UNION
@@ -66,7 +51,7 @@ SELECT country
 FROM suppliers
 ORDER BY ship_country
 
---8
+#8. Select countries in which customers, suppliers, and employees are “registered” at the same time.
 
 SELECT ship_country
 FROM orders
@@ -77,7 +62,7 @@ INTERSECT
 SELECT country
 FROM employees
 
---9
+#9. Select countries in which both customers and suppliers are “registered”, but employees are not “registered” in them.
 
 SELECT ship_country
 FROM orders
@@ -87,4 +72,3 @@ FROM suppliers
 EXCEPT
 SELECT country
 FROM employees
-
