@@ -2,9 +2,8 @@
 
 
 # About me
-Jestem głęboko zainteresowanа testowaniem oprogramowania i stale uczę się poprzez samokształcenie.
-Posiadam umiejętności w zakresie raportowania błędów, pisania przypadków testowych i testowania API. Zdobyłam doświadczenie w skutecznej komunikacji w zespole, koordynowaniu zadań i tworzeniu raportów w mojej poprzedniej pracy. 
-Aktywnie poszukuję możliwości zdobycia praktycznego doświadczenia zawodowego w IT projekcie.
+I am a junior manual tester. I have skills in bug reporting, writing test cases, and API testing. In my previous job, I gained experience in effectively communicating within a team, coordinating tasks, and creating work reports. 
+I am actively seeking an opportunity to gain practical experience on a real-life IT project. 
 
 
 # Tools
