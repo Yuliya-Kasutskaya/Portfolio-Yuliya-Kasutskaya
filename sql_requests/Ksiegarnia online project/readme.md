@@ -1,1 +1,1 @@
-Exersises taken from [MySQL Course]([https://miroslawzelent.pl/kurs-mysql/zapytania-zlozone-select-wyjecie-danych-z-kilku-tabel/](https://miroslawzelent.pl/kurs-mysql/)https://miroslawzelent.pl/kurs-mysql/)
+Exercises taken from [MySQL Course](https://miroslawzelent.pl/kurs-mysql/)
