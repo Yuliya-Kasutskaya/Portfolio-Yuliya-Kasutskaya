@@ -22,12 +22,12 @@ I am actively seeking an opportunity to gain practical experience on a real-life
 - API testing basics
 - Exploratory testing
 
-# Test case examples
+# Test case examples (in process)
 
-# Bug report examples
+# Bug report examples (in process)
 
 # SQL requests examples
-[Zapytania do baz danych](https://github.com/Yuliya-Kasutskaya/Portfolio-Yuliya-Kasutskaya/tree/main/sql_requests)
+  [SQL Requests](https://github.com/Yuliya-Kasutskaya/Portfolio-Yuliya-Kasutskaya/tree/main/sql_requests)
 
   
 
