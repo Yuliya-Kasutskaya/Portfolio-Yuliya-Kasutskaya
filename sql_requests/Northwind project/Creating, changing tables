@@ -1,49 +1,42 @@
-1. Create exam table with fields:
-
+#1. Create an exam table with fields:
 - exam identifier - auto-incrementing, unique, prohibits NULL;
 - name of the exam
-- exam dates
+- exam dates.
 
 CREATE TABLE exam
 (
 	exam_id serial UNIQUE NOT NULL,
 	exam_name varchar,
 	exam_date varchar
-);
+)
  
-
-
-2. Удалить ограничение уникальности с поля идентификатора
+#2. Remove unique constraint from id field.
 
 ALTER TABLE exam
-DROP CONSTRAINT exam_exam_id_key;
+DROP CONSTRAINT exam_exam_id_key
 
-
-3. Добавить ограничение первичного ключа на поле идентификатора
+#3. Add a primary key constraint on an id field.
 
 ALTER TABLE exam
-ADD PRIMARY KEY (exam_id);
+ADD PRIMARY KEY (exam_id)
 
-
-4. Создать таблицу person с полями
-
-- идентификатора личности (простой int, первичный ключ)
-- имя
-- фамилия
+#4. Create a person table with fields
+- identity id (simple int, primary key)
+- name
+- last name.
 
 CREATE TABLE person
 (
 	person_id int PRIMARY KEY,
 	name varchar,
 	last_name varchar
-);
+)
 
-5. Создать таблицу паспорта с полями:
-
-- идентификатора паспорта (простой int, первичный ключ)
-- серийный номер (простой int, запрещает NULL)
-- регистрация
-- ссылка на идентификатор личности (внешний ключ)
+#5. Create a passport table with fields:
+- passport id (simple int, primary key)
+- serial number (simple int, prohibits NULL)
+- registration
+- reference to identity id (foreign key).
 
 CREATE TABLE passport
 (
@@ -53,47 +46,41 @@ CREATE TABLE passport
 	person_id int,
 
 	CONSTRAINT FK_passport_person FOREIGN KEY (person_id) REFERENCES person (person_id)
-);
+)
 
-
-6. Добавить колонку веса в таблицу book (создавали ранее) с ограничением, проверяющим вес (больше 0 но меньше 100)
+#6. Add a weight column to the book table (created earlier) with a constraint checking the weight (bigger than 0 but less than 100).
 
 ALTER TABLE book
-ADD COLUMN weigth decimal CONSTRAINT CHK_book_weigth CHECK (weigth > 0 AND weigth < 100);
+ADD COLUMN weigth decimal CONSTRAINT CHK_book_weigth CHECK (weigth > 0 AND weigth < 100)
 
-7. Убедиться в том, что ограничение на вес работает (попробуйте вставить невалидное значение)
-
-SELECT * FROM book
+#7. Make sure that the weight limit works (try inserting an invalid value).
 
 INSERT INTO book
 VALUES 
 (1, 'New book', 'ibsn', 1, 1),
 (3, 'New book1', 'ibsn', 1, 4),
-(5, 'New book2', 'ibsn', 1, 4090);
+(5, 'New book2', 'ibsn', 1, 4090)
 
 
-8. Создать таблицу student с полями:
-
-- идентификатора (автоинкремент)
-- полное имя
-- курс (по умолчанию 1)
-
+#8. Create a table student with fields:
+- id (auto-increment)
+- full name
+- course (default 1).
 
 CREATE TABLE student
 (
 	student_id serial,
 	full_name varchar,
 	course varchar DEFAULT 1
-);
+)
 
-
-9. Вставить запись в таблицу студентов и убедиться, что ограничение на вставку значения по умолчанию работает
+#9. Insert a record into the students' table and make sure the default value insertion constraint works.
 
 INSERT INTO student
 VALUES 
 (1, 'alex alexev')
 
-10. Удалить ограничение "по умолчанию" из таблицы студентов
+#10. Remove the "default" constraint from the student table.
 
 ALTER TABLE student 
 ALTER COLUMN course DROP DEFAULT
