@@ -13,10 +13,10 @@ I am actively seeking an opportunity to gain practical experience on a real-life
 - IntelliJ IDEA
 - Git, GitHub
 - TestRail
-
+- DevTools
+  
 # Skills
 - Syllabus ISTQB
-- DevTools
 - Creating test cases
 - Bug reporting
 - API testing basics
